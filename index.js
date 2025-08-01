@@ -8,6 +8,9 @@ const flash = require('express-flash');
 const app = express();
 const port = process.env.PORT
 
+const Opinion = require('./models/Opinion')
+const User = require('./models/User')
+
 app.engine('hbs', exphbs.engine({extname: 'hbs'}));
 app.set('view engine', 'hbs');
 
@@ -50,7 +53,7 @@ app.use((req, res, next) => {
 
 const conn = require('./db/conn')
 
-conn.sync().then(
+conn.sync({force:true}).then(
     () => {
         app.listen(port)
         console.log(`App listening on port ${port}`)
