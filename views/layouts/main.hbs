@@ -17,14 +17,23 @@
         <h1>Auto Opinions</h1>
         <ul>
             <li>
-                <a href="/">View Opinions</a>
-                <a href="/auth/login">Log In</a>
-                <a href="/auth/register">Register</a>
+                {{#if session.userid}}
+                <a href="/">Log Out</a>
+                {{else}}
+                    <a href="/">View Opinions</a>
+                    <a href="/auth/login">Log In</a>
+                    <a href="/auth/register">Register</a>
+                {{/if}}
             </li>
         </ul>
     </nav>
     <div class="container">
-        <!-- Bootstrap configs -->
+        <!-- flash messages -->
+        {{#if messages.message}}
+            <div class="flash-message {{messages.type}}">
+                {{messages.message}}
+            </div>
+        {{/if}}
         {{{ body }}}
     </div>
     <footer class="footer">

@@ -193,3 +193,25 @@ body{
 .login-link a:hover {
     text-decoration: underline;
 }
+
+/* FLASH MESSAGES */
+
+.flash-message {
+  padding: 15px 20px;
+  margin: 20px auto;
+  width: fit-content;
+  min-width: 250px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  animation: fadeOut 5s forwards;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #88c0fc;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
