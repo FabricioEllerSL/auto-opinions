@@ -11,6 +11,7 @@ const port = process.env.PORT
 const Opinion = require('./models/Opinion')
 const User = require('./models/User')
 const opinionRoutes = require('./routes/opinionRoutes')
+const authRoutes = require('./routes/authRoutes')
 
 app.engine('hbs', exphbs.engine({extname: 'hbs'}));
 app.set('view engine', 'hbs');
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/opinion', opinionRoutes)
+app.use('/auth', authRoutes)
 
 app.get('/', (req, res) => {
     res.render('landing')
