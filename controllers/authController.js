@@ -10,6 +10,11 @@ module.exports = class AuthController{
         res.render('auth/register')
     }
 
+    static logout(req, res){
+        req.session.destroy()
+        res.redirect('/auth/login')
+    }
+
     static async registerPost(req, res){
 
         const { name, email, password, confirmPassword } = req.body
