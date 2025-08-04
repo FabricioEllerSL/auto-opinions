@@ -11,7 +11,9 @@ This project is developed as a personal study and practice tool to learn Node.js
 It’s a fun way to explore backend development, routing, templating, and working with data — all while building something practical and enjoyable!
 
 ## 🚗 Features
-- This section will be updated with project features as they are developed
+- View all Opinions
+- Create, Edit and Delete your opinion
+- View your Opinions
 ---
 
 ## 💻 Tech Stack
