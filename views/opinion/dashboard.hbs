@@ -1,0 +1,24 @@
+<div class="dashboard">
+    <div class="title-container">
+        <h2>Dashboard</h2>
+        <a href="/opinion/add" class="btn">Create new opinion</a>
+    </div>
+    <h3>Your opinions:</h3>
+    <ul>
+        {{#each opinion}}
+            <li>
+                <span class="label">{{this.title}}</span>
+                <span class="actions">
+                    <a href="/opinion/edit/{{this.id}}" class="btn">Edit</a>
+                    <form action="/opinion/remove" method="POST">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="submit" value="Excluir" class="btn">
+                    </form>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+    {{#if emptyopinion}}
+        <p>There is no opinion here, but you can create one, just<a href="/opinion/add">click here</a></p>
+    {{/if}}
+</div>
