@@ -1,17 +1,32 @@
 <div class="opinion-list-container">
+
   {{#if search}}
     <h2 class="opinion-list-title">You are looking for: {{search}}</h2>
   {{else}}
     <h2 class="opinion-list-title">All Opinions</h2>
   {{/if}}
+
   <form action="/opinion" method="GET" class="opinion-search-form">
     <input 
       type="text" 
       name="q" 
       class="opinion-search-input" 
       placeholder="Search opinions..." 
+      value="{{search}}"
     />
+
+    <input type="hidden" name="order" value="{{order}}" />
+
     <button type="submit" class="opinion-search-btn">Search</button>
+
+    <div class="sort-controls">
+      <a href="/opinion?q={{search}}&order=ASC" class="sort-btn" title="Order by oldest">
+        <i class="bi bi-arrow-up"></i>
+      </a>
+      <a href="/opinion?q={{search}}&order=DESC" class="sort-btn" title="Order by newest">
+        <i class="bi bi-arrow-down"></i>
+      </a>
+    </div>
   </form>
 
   {{#if opinions.length}}

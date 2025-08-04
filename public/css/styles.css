@@ -465,3 +465,23 @@ body{
 .opinion-search-btn:hover {
   background-color: #4d4d4d;
 }
+
+.sort-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.sort-btn {
+  background-color: #2E2E2E;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sort-btn:hover {
+  background-color: #4d4d4d;
+}

@@ -7,9 +7,14 @@ module.exports = class OpinionController{
     static async showOpinions(req, res){
 
         let search = ''
+        let order = ''
 
         if(req.query.q){
             search = req.query.q
+        }
+
+        if(req.query.order){
+            order = req.query.order
         }
 
         console.log(`Pesquisa: ${search}`)
@@ -19,7 +24,8 @@ module.exports = class OpinionController{
                 include: User,
                 where: {
                     title: {[Op.like]: `%${search}%`}
-                }
+                },
+                order: [['createdAt', order]]
             }
         )
 
