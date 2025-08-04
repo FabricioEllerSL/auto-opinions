@@ -1,5 +1,18 @@
 <div class="opinion-list-container">
-  <h2 class="opinion-list-title">All Opinions</h2>
+  {{#if search}}
+    <h2 class="opinion-list-title">You are looking for: {{search}}</h2>
+  {{else}}
+    <h2 class="opinion-list-title">All Opinions</h2>
+  {{/if}}
+  <form action="/opinion" method="GET" class="opinion-search-form">
+    <input 
+      type="text" 
+      name="q" 
+      class="opinion-search-input" 
+      placeholder="Search opinions..." 
+    />
+    <button type="submit" class="opinion-search-btn">Search</button>
+  </form>
 
   {{#if opinions.length}}
     <ul class="opinion-list">

@@ -1,13 +1,31 @@
 const Opinion = require('../models/Opinion')
 const User = require('../models/User')
 
+const {Op} = require('sequelize')
+
 module.exports = class OpinionController{
     static async showOpinions(req, res){
-        const opinionsData = await Opinion.findAll({include:User})
+
+        let search = ''
+
+        if(req.query.q){
+            search = req.query.q
+        }
+
+        console.log(`Pesquisa: ${search}`)
+
+        const opinionsData = await Opinion.findAll(
+            {
+                include: User,
+                where: {
+                    title: {[Op.like]: `%${search}%`}
+                }
+            }
+        )
 
         const opinions = opinionsData.map((result) => result.get({plain: true}))
 
-        res.render('opinion/home', {opinions})
+        res.render('opinion/home', {opinions, search})
     }
 
     static async dashboard(req, res){
