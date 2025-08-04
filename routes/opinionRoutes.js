@@ -7,5 +7,7 @@ const checkAuth = require('../helpers/auth').checkAuth
 
 router.get('/', OpinionController.showOpinions)
 router.get('/dashboard', checkAuth, OpinionController.dashboard)
+router.get('/add', checkAuth, OpinionController.addOpinion)
+router.post('/add', checkAuth, OpinionController.addOpinionPost)
 
 module.exports = router

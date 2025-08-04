@@ -215,3 +215,167 @@ body{
   80% { opacity: 1; }
   100% { opacity: 0; display: none; }
 }
+
+/* ADD OPINION */
+
+.opinion-form-container {
+  background-color: #fff;
+  padding: 2em;
+  max-width: 500px;
+  margin: 3em auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.opinion-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #2E2E2E;
+  font-size: 1.8rem;
+}
+
+.opinion-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.opinion-form-group {
+  margin-bottom: 1.5em;
+}
+
+.opinion-form-label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  color: #2E2E2E;
+}
+
+.opinion-form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.opinion-form-input:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.2);
+}
+
+.opinion-form-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2E2E2E;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.opinion-form-btn:hover {
+  background-color: #4d4d4d;
+}
+
+/* OPINION DASHBOARD */
+
+.dashboard {
+  max-width: 900px;
+  margin: 3em auto;
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard .title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.dashboard .title-container h2 {
+  font-size: 2rem;
+  color: #2E2E2E;
+}
+
+.dashboard h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1em;
+}
+
+.dashboard ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dashboard ul li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard .label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2E2E2E;
+}
+
+.dashboard .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.dashboard .actions .btn {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+.dashboard .actions form {
+  display: inline;
+}
+
+.dashboard .actions input[type="submit"] {
+  background-color: #dc3545;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard .actions input[type="submit"]:hover {
+  background-color: #b02a37;
+}
+
+.dashboard p {
+  margin-top: 2em;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.dashboard p a {
+  margin-left: 0.3em;
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dashboard p a:hover {
+  text-decoration: underline;
+}
