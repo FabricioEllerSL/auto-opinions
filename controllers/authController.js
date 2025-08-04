@@ -15,6 +15,40 @@ module.exports = class AuthController{
         res.redirect('/auth/login')
     }
 
+    static async loginPost(req, res) {
+        
+        const { email, password } = req.body
+
+        const user = await User.findOne({ where: { email: email } })
+
+        if (!user) {
+            req.flash('message', 'User not found!!!')
+            res.render('auth/login')
+            return
+        }
+
+        const passwordMatch = bcrypt.compareSync(password, user.password)
+
+        if(!passwordMatch){
+            req.flash('message', 'Email and password does not match!!!')
+            res.render('auth/login')
+            return
+        }
+
+        try{
+
+            req.session.userid = user.id
+            req.flash("message", "Successfully logged in!")
+            req.session.save(() => {
+                res.redirect('/opinion')
+            })
+
+        } catch(err){
+            console.log(`Error during create user: ${err}`)
+        }
+
+    }
+
     static async registerPost(req, res){
 
         const { name, email, password, confirmPassword } = req.body
@@ -59,10 +93,5 @@ module.exports = class AuthController{
         } catch(err){
             console.log(`Error during create user: ${err}`)
         }
-        
-
-    }
-    static async loginPost(req, res){
-
     }
 }
