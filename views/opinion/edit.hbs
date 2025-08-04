@@ -1,0 +1,18 @@
+<div class="opinion-form-container">
+  <h2 class="opinion-form-title">Edit your Opinion</h2>
+  <form action="/opinion/edit" method="POST" class="opinion-form">
+    <input type="hidden" name="id" value="{{opinion.id}}">
+    <div class="opinion-form-group">
+      <label for="title" class="opinion-form-label">Title</label>
+      <input 
+        type="text" 
+        name="title" 
+        id="title" 
+        class="opinion-form-input" 
+        value="{{opinion.title}}"
+        required
+      />
+    </div>
+    <button type="submit" class="opinion-form-btn">Submit</button>
+  </form>
+</div>
