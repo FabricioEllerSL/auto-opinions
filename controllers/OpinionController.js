@@ -3,7 +3,11 @@ const User = require('../models/User')
 
 module.exports = class OpinionController{
     static async showOpinions(req, res){
-        res.render('opinion/home')
+        const opinionsData = await Opinion.findAll({include:User})
+
+        const opinions = opinionsData.map((result) => result.get({plain: true}))
+
+        res.render('opinion/home', {opinions})
     }
 
     static async dashboard(req, res){

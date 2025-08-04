@@ -1,1 +1,18 @@
-<h1>Here will be the opinions</h1>
+<div class="opinion-list-container">
+  <h2 class="opinion-list-title">All Opinions</h2>
+
+  {{#if opinions.length}}
+    <ul class="opinion-list">
+      {{#each opinions}}
+        <li class="opinion-item">
+          <div class="opinion-content">
+            <span class="opinion-title">{{this.title}}</span>
+            <span class="opinion-user">By: {{this.User.name}}</span>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p class="no-opinions">No opinions available yet.</p>
+  {{/if}}
+</div>
